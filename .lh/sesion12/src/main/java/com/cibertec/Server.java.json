@@ -1,0 +1,34 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Server.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1716511507903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716511515564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n package com.cibertec;\r\n \r\n public class Server {\r\n     \r\n+Server\r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1716511529483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n package com.cibertec;\r\n \r\n public class Server {\r\n     \r\n-Server\r\n+    private final int PORT = \r\n \r\n+    public Server(){\r\n+        \r\n+    }\r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1716511535393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n     private final int PORT = 13;\r\n \r\n     public Server(){\r\n         \r\n+        \r\n     }\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1716511540528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n package com.cibertec;\r\n \r\n public class Server {\r\n     \r\n-    privatestatic final int PORT = 13;\r\n+    private static final int PORT = 13;\r\n \r\n     public Server(){\r\n         \r\n \r\n"
+                }
+            ],
+            "date": 1716511507903,
+            "name": "Commit-0",
+            "content": "package com.cibertec;\r\n\r\npublic class Server {\r\n    \r\n}\r\n"
+        }
+    ]
+}

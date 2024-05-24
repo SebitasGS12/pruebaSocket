@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Main.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716510828066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716512110920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,8 @@\n \n public class Main {\n     public static void main(String[] args) {\n         System.out.println(\"Hello world! --> cibertec --> goyzueta el hacker\");\n+\n+        \n     }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1716510828066,
+            "name": "Commit-0",
+            "content": "package com.cibertec;\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello world! --> cibertec --> goyzueta el hacker\");\n    }\n}"
+        }
+    ]
+}

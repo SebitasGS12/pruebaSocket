@@ -1,0 +1,26 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Client.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716512382201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716512437869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package com.cibertec;\r\n \r\n public class Client {\r\n     \r\n-    \r\n \r\n+private static final PORT = Server.PORT;\r\n }\r\n"
+                },
+                {
+                    "date": 1716512445816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package com.cibertec;\r\n \r\n public class Client {\r\n     \r\n-    private static final PORT = Server.PORT;\r\n+    private static final int PORT = Server.PORT;\r\n \r\n }\r\n"
+                }
+            ],
+            "date": 1716512382201,
+            "name": "Commit-0",
+            "content": "package com.cibertec;\r\n\r\npublic class Client {\r\n    \r\n}\r\n"
+        }
+    ]
+}
