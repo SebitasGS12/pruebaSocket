@@ -1,0 +1,30 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Mensaje/Cliente.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1716943383866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716943596950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n package com.cibertec.Mensaje;\r\n \r\n public class Cliente {\r\n-    \r\n+    public Cliente\r\n }\r\n"
+                },
+                {
+                    "date": 1716944062929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \r\n public class Cliente {\r\n     public Cliente(){\r\n \r\n+        \r\n \r\n-        \r\n     }\r\n }\r\n"
+                },
+                {
+                    "date": 1716944070766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \r\n public class Cliente {\r\n     public Cliente(){\r\n \r\n-        \r\n+        System.out.println(\"1. Cliente Construido\");\r\n \r\n     }\r\n }\r\n"
+                }
+            ],
+            "date": 1716943383866,
+            "name": "Commit-0",
+            "content": "package com.cibertec.Mensaje;\r\n\r\npublic class Cliente {\r\n    \r\n}\r\n"
+        }
+    ]
+}

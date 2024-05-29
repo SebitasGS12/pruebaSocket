@@ -1,0 +1,30 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Mensaje/Server.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1716943427222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716943432535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,9 @@\n-class\n\\ No newline at end of file\n+package com.cibertec.Mensaje;\r\n+\r\n+/**\r\n+ * Server\r\n+ */\r\n+public class Server {\r\n+\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716943471539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \r\n \r\n public class Server {\r\n \r\n-    \r\n+    main\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716943485599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \r\n \r\n public class Server {\r\n \r\n+    PUB\r\n \r\n-    \r\n     public static void main(String[] args) {\r\n         \r\n     }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1716943427222,
+            "name": "Commit-0",
+            "content": "class"
+        }
+    ]
+}

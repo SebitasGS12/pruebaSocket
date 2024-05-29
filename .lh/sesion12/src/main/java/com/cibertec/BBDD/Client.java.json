@@ -1,0 +1,30 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/BBDD/Client.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1716948963393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716949360122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,24 @@\n package com.cibertec.BBDD;\r\n \r\n+import java.io.IOException;\r\n+import java.net.Socket;\r\n+\r\n public class Client {\r\n+    private static final int PORT = 13;\r\n+    private static final String HOST = \"localhost\";\r\n \r\n+    public Client(){\r\n+        try (Socket socket = new Socket(HOST, PORT)) {\r\n+            System.out.println(\"1 >> Connected to server on port \" + PORT);\r\n+            System.out.println(\"2 >> Complete\");\r\n+\r\n+            socket.close();\r\n+        } catch (IOException e) {\r\n+            e.printStackTrace();\r\n+        }\r\n+    }\r\n+\r\n+    public static void main(String[] args) {\r\n+        new Client();\r\n+    }\r\n }\r\n"
+                },
+                {
+                    "date": 1716949368407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n     public Client(){\r\n         try (Socket socket = new Socket(HOST, PORT)) {\r\n             System.out.println(\"1 >> Connected to server on port \" + PORT);\r\n             \r\n+            //Flujo de activiades\r\n             \r\n-            \r\n             System.out.println(\"2 >> Complete\");\r\n \r\n             socket.close();\r\n         } catch (IOException e) {\r\n"
+                },
+                {
+                    "date": 1716956432699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,21 @@\n-package com.cibertec.BBDD;\r\n+package com.cibertec.archivos;\r\n \r\n+import java.io.BufferedReader;\r\n import java.io.DataOutputStream;\r\n import java.io.File;\r\n import java.io.FileInputStream;\r\n-import java.io.FileOutputStream;\r\n import java.io.IOException;\r\n+import java.io.InputStreamReader;\r\n+import java.io.PrintWriter;\r\n import java.net.Socket;\r\n-import java.util.zip.ZipEntry;\r\n-import java.util.zip.ZipOutputStream;\r\n+import java.util.Random;\r\n \r\n+import javax.xml.crypto.Data;\r\n+\r\n public class Client {\r\n-private static final String HOST = \"localhost\";\r\n+    \r\n+    private static final String HOST = \"localhost\";\r\n     private static final int PORT = 13;\r\n     \r\n     public Client(){\r\n         System.out.println(\"1 >> [ini] Client constructor\");\r\n@@ -20,32 +24,13 @@\n             Socket socket = new Socket(HOST, PORT);\r\n             System.out.println(\"3 >> connected to server...\");\r\n \r\n             File[] files = new File(\"D:\\\\client\").listFiles();\r\n+            Random random = new Random();\r\n+            int index = random.nextInt(files.length);\r\n+            File file = files[index];\r\n+            System.out.println(\"Enviando archivo: \" + file.getAbsolutePath());\r\n \r\n-            //Se crea un archivo zip\r\n-            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(\"D:\\\\client\\\\archivo.zip\"));\r\n-            for (File file : files) {\r\n-                //Se crea una entrada en el archivo zip\r\n-                FileInputStream fis = new FileInputStream(file);\r\n-                ZipEntry zipEntry = new ZipEntry(file.getName());\r\n-                zos.putNextEntry(zipEntry);\r\n-\r\n-                //Se construye el archivo zip con los bytes del archivo\r\n-                byte[] buffer = new byte[1024];\r\n-                int count;\r\n-                while ((count = fis.read(buffer)) > 0) {\r\n-                    zos.write(buffer, 0, count);\r\n-                }\r\n-                fis.close();\r\n-                zos.closeEntry();    \r\n-            }\r\n-            zos.close();\r\n-\r\n-            \r\n-            //Se envia el archivo zip\r\n-            File file = new File(\"D:\\\\client\\\\archivo.zip\");\r\n-\r\n             //Flujo de datos de entrada y salida\r\n             FileInputStream fis = new FileInputStream(file);\r\n             DataOutputStream salida = new DataOutputStream(socket.getOutputStream());\r\n \r\n@@ -67,5 +52,5 @@\n \r\n     public static void main(String[] args) {\r\n         new Client();\r\n     }\r\n-}\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1716948963393,
+            "name": "Commit-0",
+            "content": "package com.cibertec.BBDD;\r\n\r\npublic class Client {\r\n\r\n}\r\n"
+        }
+    ]
+}

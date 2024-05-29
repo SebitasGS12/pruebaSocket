@@ -1,0 +1,26 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/BBDD/Imagen.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716957525772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716957547014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n package com.cibertec.BBDD;\r\n \r\n public class Imagen {\r\n+    String nombre,int tamano,File archivo\r\n \r\n-    \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1716957556083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n package com.cibertec.BBDD;\r\n \r\n public class Imagen {\r\n-    private String nombre,int tamano,File archivo\r\n+    private String nombre;\r\n+    pritvateint tamano,File archivo\r\n \r\n \r\n }\r\n"
+                }
+            ],
+            "date": 1716957525772,
+            "name": "Commit-0",
+            "content": "package com.cibertec.BBDD;\r\n\r\npublic class Imagen {\r\n\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Zip/Server",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716947185420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716947190818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package com.cibertec.zip;\r\n+package com.cibertec.Zip;\r\n \r\n import java.io.DataInputStream;\r\n import java.io.File;\r\n import java.io.FileOutputStream;\r\n"
+                }
+            ],
+            "date": 1716947185420,
+            "name": "Commit-0",
+            "content": "package com.cibertec.zip;\r\n\r\nimport java.io.DataInputStream;\r\nimport java.io.File;\r\nimport java.io.FileOutputStream;\r\nimport java.io.IOException;\r\nimport java.net.ServerSocket;\r\nimport java.net.Socket;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\npublic class Server {\r\n    \r\n    private static final int PORT = 13;\r\n\r\n    public Server(){\r\n        System.out.println(\"1 >> [ini] Server constructor\");\r\n        \r\n        try (ServerSocket serverSocket = new ServerSocket(PORT)) {\r\n            System.out.println(\"2 >> waiting for client...\");                \r\n            while(true){\r\n                Socket clienSocket = serverSocket.accept();\r\n                System.out.println(\"3 >> accepted client connection...\");\r\n                \r\n                //Generar nombre del archivo\r\n                SimpleDateFormat sdf = new SimpleDateFormat(\"yyyy_MM_dd_HH_mm_ss\");\r\n                String rutaArchivo = \"D:\\\\server\\\\\" + sdf.format(new Date()) + \".zip\";\r\n                File file = new File(rutaArchivo);\r\n                System.out.println(\"Archivo creado: \" + file.getAbsolutePath());\r\n\r\n                //Flujo de datos de entrada y salida\r\n                FileOutputStream fos = new FileOutputStream(file);\r\n                DataInputStream entrada = new DataInputStream(clienSocket.getInputStream());\r\n\r\n                //Recibiendo archivo\r\n                byte[] buffer = new byte[1024];\r\n                int count;\r\n                while ((count = entrada.read(buffer)) > 0) {\r\n                    fos.write(buffer, 0, count);\r\n                }\r\n                fos.close();\r\n                System.out.println(\"Archivo recibido: \" + file.getAbsolutePath());\r\n\r\n                System.out.println(\"4 >> final for client...\");\r\n                clienSocket.close();\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n\r\n    }\r\n\r\n\r\n    public static void main(String[] args) {\r\n        new Server();   \r\n    }\r\n}"
+        }
+    ]
+}

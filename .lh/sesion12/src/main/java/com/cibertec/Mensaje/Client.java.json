@@ -1,0 +1,18 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Mensaje/Client.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1716944358597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1716944358597,
+            "name": "Commit-0",
+            "content": "package com.cibertec.Mensaje;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.IOException;\r\nimport java.io.InputStreamReader;\r\nimport java.io.PrintWriter;\r\nimport java.net.Socket;\r\nimport java.util.Random;\r\n\r\npublic class Client {\r\n    \r\n    private static final String HOST = \"localhost\";\r\n    private static final int PORT = 13;\r\n    \r\n    public Client(){\r\n        System.out.println(\"1 >> [ini] Client constructor\");\r\n        try {\r\n            System.out.println(\"2 >> connecting to server...\");\r\n            Socket socket = new Socket(HOST, PORT);\r\n            System.out.println(\"3 >> connected to server...\");\r\n\r\n            //Flujo de datos de entrada y salida\r\n            BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));\r\n            PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);\r\n            \r\n            //Reglas de negocio\r\n            String[] tiposCliente = {\"PLATEA\", \"VIP\", \"PLATINIUM\"};\r\n            Random random = new Random();\r\n            int index = random.nextInt(tiposCliente.length);\r\n            String mensaje = tiposCliente[index];\r\n            System.out.println(\"Enviando mensaje: \" + mensaje);\r\n\r\n            //Salida de mensaje\r\n            salida.println(mensaje);\r\n\r\n            //Recibiendo mensaje\r\n            String precio = entrada.readLine();\r\n            System.out.println(\"Precio: \" + precio);\r\n            \r\n            System.out.println(\"4 >> final for client...\");\r\n            socket.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new Client();\r\n    }\r\n}"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "sesion12/pom.xml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1716951171274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716951189993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n     <properties>\n         <maven.compiler.source>17</maven.compiler.source>\n         <maven.compiler.target>17</maven.compiler.target>\n     </properties>\n-<dependency>\n-<groupId>com.mysql</groupId>\n-<artifactId>mysql-connector-j</artifactId>\n-<scope>runtime</scope>\n-</dependency>\n+    <dependency>\n+        <groupId>com.mysql</groupId>\n+        <artifactId>mysql-connector-j</artifactId>\n+        <scope>runtime</scope>\n+    </dependency>\n </project>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716952746319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,13 @@\n     <properties>\n         <maven.compiler.source>17</maven.compiler.source>\n         <maven.compiler.target>17</maven.compiler.target>\n     </properties>\n-    <dependency>\n-        <groupId>com.mysql</groupId>\n-        <artifactId>mysql-connector-j</artifactId>\n-        <scope>runtime</scope>\n-    </dependency>\n+    <dependencies>\n+        <!-- MySQL JDBC Driver -->\n+        <dependency>\n+            <groupId>mysql</groupId>\n+            <artifactId>mysql-connector-java</artifactId>\n+            <version>8.0.XX</version>\n+        </dependency>\n+    </dependencies>\n </project>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716952753298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,18 @@\n             <artifactId>mysql-connector-java</artifactId>\n             <version>8.0.XX</version>\n         </dependency>\n     </dependencies>\n+    build>\n+        <plugins>\n+            <plugin>\n+                <groupId>org.apache.maven.plugins</groupId>\n+                <artifactId>maven-compiler-plugin</artifactId>\n+                <version>3.8.1</version>\n+                <configuration>\n+                    <source>1.8</source>\n+                    <target>1.8</target>\n+                </configuration>\n+            </plugin>\n+        </plugins>\n+    </build>\n </project>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716952777546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n         <!-- MySQL JDBC Driver -->\n         <dependency>\n             <groupId>mysql</groupId>\n             <artifactId>mysql-connector-java</artifactId>\n-            <version>8.0.XX</version>\n+            <version>8.0.30</version>\n         </dependency>\n     </dependencies>\n-    build>\n+    <build>\n         <plugins>\n             <plugin>\n                 <groupId>org.apache.maven.plugins</groupId>\n                 <artifactId>maven-compiler-plugin</artifactId>\n"
+                },
+                {
+                    "date": 1716953297815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <project xmlns=\"http://maven.apache.org/POM/4.0.0\"\n-         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n-         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n+        xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n     <modelVersion>4.0.0</modelVersion>\n \n     <groupId>com.cibertec</groupId>\n     <artifactId>sesion12</artifactId>\n"
+                }
+            ],
+            "date": 1716951171274,
+            "name": "Commit-0",
+            "content": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n    <modelVersion>4.0.0</modelVersion>\n\n    <groupId>com.cibertec</groupId>\n    <artifactId>sesion12</artifactId>\n    <version>1.0-SNAPSHOT</version>\n\n    <properties>\n        <maven.compiler.source>17</maven.compiler.source>\n        <maven.compiler.target>17</maven.compiler.target>\n    </properties>\n<dependency>\n<groupId>com.mysql</groupId>\n<artifactId>mysql-connector-j</artifactId>\n<scope>runtime</scope>\n</dependency>\n</project>"
+        }
+    ]
+}

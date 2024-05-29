@@ -1,0 +1,30 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Archivos/Server.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1716945475665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716945579733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \r\n import java.io.IOException;\r\n import java.net.ServerSocket;\r\n import java.net.Socket;\r\n+import java.text.SimpleDateFormat;\r\n \r\n public class Server {\r\n     \r\n     private static final int PORT = 13;\r\n@@ -14,9 +15,13 @@\n             while (true) {\r\n                 System.out.println(\"2 >> Waiting for client connection...\");\r\n                 Socket clientSocket = serverSocket.accept();\r\n                 System.out.println(\"3 >> New client connected: \" + clientSocket.getInetAddress().getHostAddress());\r\n+                //Generar nombre del archivo\r\n+                SimpleDateFormat sdf = \r\n \r\n+\r\n+\r\n                 System.out.println(\" 4 >> Client Complete\");\r\n \r\n                 clientSocket.close();\r\n                 System.out.println(\"5 >>  Client disconnected\");\r\n"
+                },
+                {
+                    "date": 1716945591537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \r\n import java.io.IOException;\r\n import java.net.ServerSocket;\r\n import java.net.Socket;\r\n+import java.text.DateFormat;\r\n import java.text.SimpleDateFormat;\r\n \r\n public class Server {\r\n     \r\n@@ -16,9 +17,9 @@\n                 System.out.println(\"2 >> Waiting for client connection...\");\r\n                 Socket clientSocket = serverSocket.accept();\r\n                 System.out.println(\"3 >> New client connected: \" + clientSocket.getInetAddress().getHostAddress());\r\n                 //Generar nombre del archivo\r\n-                SimpleDateFormat sdf = new SimpleDateFormat(\"\") \r\n+                SimpleDateFormat sdf = new SimpleDateFormat(DateFormat.) \r\n \r\n \r\n \r\n                 System.out.println(\" 4 >> Client Complete\");\r\n"
+                },
+                {
+                    "date": 1716945606876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,39 @@\n+package com.cibertec.Archivos;\r\n+\r\n+import java.io.IOException;\r\n+import java.net.ServerSocket;\r\n+import java.net.Socket;\r\n+import java.text.DateFormat;\r\n+import java.text.SimpleDateFormat;\r\n+\r\n+public class Server {\r\n+    \r\n+    private static final int PORT = 13;\r\n+\r\n+    public Server(){\r\n+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {\r\n+            System.out.println(\"1 >> Server started on port \" + PORT);\r\n+            while (true) {\r\n+                System.out.println(\"2 >> Waiting for client connection...\");\r\n+                Socket clientSocket = serverSocket.accept();\r\n+                System.out.println(\"3 >> New client connected: \" + clientSocket.getInetAddress().getHostAddress());\r\n+                //Generar nombre del archivo\r\n+                SimpleDateFormat sdf = new SimpleDateFormat) \r\n+\r\n+\r\n+\r\n+                System.out.println(\" 4 >> Client Complete\");\r\n+\r\n+                clientSocket.close();\r\n+                System.out.println(\"5 >>  Client disconnected\");\r\n+            }\r\n+        } catch (IOException e) {\r\n+            e.printStackTrace();\r\n+        }\r\n+    }\r\n+\r\n+    public static void main(String[] args) {\r\n+        new Server();\r\n+    }\r\n+\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1716945475665,
+            "name": "Commit-0",
+            "content": "package com.cibertec.Archivos;\r\n\r\nimport java.io.IOException;\r\nimport java.net.ServerSocket;\r\nimport java.net.Socket;\r\n\r\npublic class Server {\r\n    \r\n    private static final int PORT = 13;\r\n\r\n    public Server(){\r\n        try (ServerSocket serverSocket = new ServerSocket(PORT)) {\r\n            System.out.println(\"1 >> Server started on port \" + PORT);\r\n            while (true) {\r\n                System.out.println(\"2 >> Waiting for client connection...\");\r\n                Socket clientSocket = serverSocket.accept();\r\n                System.out.println(\"3 >> New client connected: \" + clientSocket.getInetAddress().getHostAddress());\r\n\r\n                System.out.println(\" 4 >> Client Complete\");\r\n\r\n                clientSocket.close();\r\n                System.out.println(\"5 >>  Client disconnected\");\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new Server();\r\n    }\r\n\r\n}"
+        }
+    ]
+}

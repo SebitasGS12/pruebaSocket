@@ -1,0 +1,26 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/BBDD/Conexion.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716949306175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716949714968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import java.sql.Connection;\r\n \r\n public class Conexion {\r\n \r\n-    \tprivate String Driver=\"com.mysql.jdbc.Driver\";\r\n+    private String Driver=\"com.mysql.jdbc.Driver\";\r\n \tprivate String URL=\"jdbc:mysql://localhost:3306/bd_gci\";\r\n \tprivate String Usuario=\"root\";\r\n \tprivate String Clave=\"mysql\";\r\n \tprivate static Connection cn; //Conexion Java-MSQL \r\n"
+                },
+                {
+                    "date": 1716949721218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+package com.cibertec.BBDD;\r\n+\r\n+import java.sql.Connection;\r\n+\r\n+public class Conexion {\r\n+\r\n+    private String Driver=\"com.mysql.jdbc.Driver\";\r\n+\tprivate String URL=\"jdbc:mysql://localhost:3306/bd_gci\";\r\n+\tprivate String Usuario=\"root\";\r\n+\tprivate String Clave=\"mysql\";\r\n+\tprivate static Connection cn; //Conexion Java-MSQL \r\n+\r\n+    \r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1716949306175,
+            "name": "Commit-0",
+            "content": "package com.cibertec.BBDD;\r\n\r\n/**\r\n * Conexion\r\n */\r\npublic class Conexion {\r\n\r\n    \r\n}"
+        }
+    ]
+}

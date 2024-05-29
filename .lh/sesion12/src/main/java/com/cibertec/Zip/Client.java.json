@@ -1,0 +1,26 @@
+{
+    "sourceFile": "sesion12/src/main/java/com/cibertec/Zip/Client.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716947201595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716948835561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,65 @@\n-package com.cibertec.Zip;\r\n-\r\n+package com.cibertec.zip;\r\n+import java.io.DataOutputStream;\r\n+import java.io.File;\r\n+import java.io.FileInputStream;\r\n+import java.io.FileOutputStream;\r\n import java.io.IOException;\r\n import java.net.Socket;\r\n-\r\n+import java.util.Random;\r\n+import java.util.zip.ZipEntry;\r\n+import java.util.zip.ZipOutputStream;\r\n public class Client {\r\n     \r\n+    private static final String HOST = \"localhost\";\r\n     private static final int PORT = 13;\r\n-    private static final String HOST = \"localhost\";\r\n-\r\n+    \r\n     public Client(){\r\n-        try (Socket socket = new Socket(HOST, PORT)) {\r\n-            System.out.println(\"1 >> Connected to server on port \" + PORT);\r\n-            System.out.println(\"2 >> Complete\");\r\n+        System.out.println(\"1 >> [ini] Client constructor\");\r\n+        try {\r\n+            System.out.println(\"2 >> connecting to server...\");\r\n+            Socket socket = new Socket(HOST, PORT);\r\n+            System.out.println(\"3 >> connected to server...\");\r\n \r\n+            File[] files = new File(\"D:\\\\client\").listFiles();\r\n+\r\n+            //Se crea un archivo zip\r\n+            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(\"D:\\\\client\\\\archivo.zip\"));\r\n+            for (File file : files) {\r\n+                //Se crea una entrada en el archivo zip\r\n+                FileInputStream fis = new FileInputStream(file);\r\n+                ZipEntry zipEntry = new ZipEntry(file.getName());\r\n+                zos.putNextEntry(zipEntry);\r\n+\r\n+                //Se construye el archivo zip con los bytes del archivo\r\n+                byte[] buffer = new byte[1024];\r\n+                int count;\r\n+                while ((count = fis.read(buffer)) > 0) {\r\n+                    zos.write(buffer, 0, count);\r\n+                }\r\n+                fis.close();\r\n+                zos.closeEntry();    \r\n+            }\r\n+            zos.close();\r\n+\r\n+            \r\n+            //Se envia el archivo zip\r\n+            File file = new File(\"D:\\\\client\\\\archivo.zip\");\r\n+\r\n+            //Flujo de datos de entrada y salida\r\n+            FileInputStream fis = new FileInputStream(file);\r\n+            DataOutputStream salida = new DataOutputStream(socket.getOutputStream());\r\n+\r\n+            //Envio de archivo\r\n+            byte[] buffer = new byte[1024];\r\n+            int count;\r\n+            while ((count = fis.read(buffer)) > 0) {\r\n+                salida.write(buffer, 0, count);\r\n+            }\r\n+            fis.close();\r\n+            \r\n+            System.out.println(\"Archivo enviado: \" + file.getAbsolutePath());\r\n+            System.out.println(\"4 >> final for client...\");\r\n             socket.close();\r\n         } catch (IOException e) {\r\n             e.printStackTrace();\r\n         }\r\n"
+                },
+                {
+                    "date": 1716948841536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-package com.cibertec.zip;\r\n+package com.cibertec.Zip;\r\n import java.io.DataOutputStream;\r\n import java.io.File;\r\n import java.io.FileInputStream;\r\n import java.io.FileOutputStream;\r\n"
+                }
+            ],
+            "date": 1716947201595,
+            "name": "Commit-0",
+            "content": "package com.cibertec.Zip;\r\n\r\nimport java.io.IOException;\r\nimport java.net.Socket;\r\n\r\npublic class Client {\r\n    \r\n    private static final int PORT = 13;\r\n    private static final String HOST = \"localhost\";\r\n\r\n    public Client(){\r\n        try (Socket socket = new Socket(HOST, PORT)) {\r\n            System.out.println(\"1 >> Connected to server on port \" + PORT);\r\n            System.out.println(\"2 >> Complete\");\r\n\r\n            socket.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new Client();\r\n    }\r\n}"
+        }
+    ]
+}
